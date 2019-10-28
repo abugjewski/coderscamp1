@@ -1,0 +1,5 @@
+
+.icon-edit:before { content: '\e800'; } /* '' */
+.icon-down-open:before { content: '\e801'; } /* '' */
+.icon-desktop:before { content: '\f108'; } /* '' */
+.icon-server:before { content: '\f233'; } /* '' */
