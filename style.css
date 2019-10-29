@@ -78,6 +78,13 @@ a {
     padding: 1rem 3rem;
     border: none;
     font-weight: bold;
+    cursor: pointer;
+}
+
+.centered-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #top {
@@ -86,22 +93,19 @@ a {
     height: 100vh;
     align-items: center;
     justify-content: center;
-    background: var(--clr-main);
+    background: fixed center / cover url("img/hero.jpeg");
 }
 
 label[for="hamburger"] {
     position: fixed;
     top: 1rem;
     left: 1rem;
-    z-index: 6;
+    z-index: 2;
 }
 
 .hamburger-icon {
-    display: flex;
-    flex-direction: column;
     width: 4rem;
     height: 4rem;
-    align-items: center;
     justify-content: space-evenly;
     background: var(--clr-light);
     border: 1px solid var(--clr-main);
@@ -128,13 +132,7 @@ label[for="hamburger"] {
     left: 0;
     width: 100%;
     background: var(--clr-light);
-    z-index: 5;
-}
-
-.top__navigation > .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    z-index: 1;
 }
 
 .navigation__brand {
@@ -160,10 +158,7 @@ label[for="hamburger"] {
 }
 
 .navigation__list {
-    display: flex;
-    flex-direction: column;
     width: 100%;
-    align-items: center;
     list-style: none;
 }
 
@@ -178,18 +173,15 @@ label[for="hamburger"] {
     text-align: center;
 }
 
-.top__bg {
+.overlay {
     position: absolute;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    opacity: 0.1;
+    background: var(--clr-main);
+    opacity: 0.9;
 }
 
 #top > .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;;
 }
 
@@ -228,7 +220,7 @@ label[for="hamburger"] {
     color: var(--clr-main);
     border: 1px solid var(--clr-main);
     font-size: 2rem;
-    z-index: 6;
+    z-index: 2;
 }
 
 .start__arrow {
@@ -250,20 +242,14 @@ label[for="hamburger"] {
 }
 
 .offer__cards {
-    display: flex;
-    flex-direction: column;
     margin-bottom: 1rem;
-    align-items: center;
 }
 
 .card {
-    display: flex;
-    flex-direction: column;
     width: 80%;
     margin-bottom: 1rem;
     padding: 2rem;
     background: var(--clr-light);
-    align-items: center;
 }
 
 .card__icon {
@@ -278,12 +264,7 @@ label[for="hamburger"] {
     text-transform: uppercase;
 }
 
-.contact-form {
-    display: flex;
-    flex-direction: column;
-}
-
-.contact-form__data {
+.contact-form, .contact-form__data {
     display: flex;
     flex-direction: column;
 }
@@ -328,6 +309,10 @@ label[for="hamburger"] {
         width: 960px;
     }
 
+    .col-to-row {
+        flex-direction: row;
+    }
+
     label[for="hamburger"] {
         display: none;
     }
@@ -338,7 +323,6 @@ label[for="hamburger"] {
     }
 
     .top__navigation > .container {
-        flex-direction: row;
         padding: 0;
     }
 
@@ -348,7 +332,6 @@ label[for="hamburger"] {
     }
 
     .navigation__list {
-        flex-direction: row;
         width: auto;
     }
 
@@ -368,6 +351,7 @@ label[for="hamburger"] {
     }
 
     .top__heading {
+        margin-top: 4rem;
         font-size: 4rem;
     }
 
@@ -404,10 +388,6 @@ label[for="hamburger"] {
         margin-bottom: 2rem;
     }
 
-    .offer__cards {
-        flex-direction: row;
-    }
-
     .card:first-child {
         margin-left: 0;
     }
@@ -429,10 +409,6 @@ label[for="hamburger"] {
 
     .card__heading {
         font-size: 2rem;
-    }
-
-    .contact-form__data {
-        flex-direction: row;
     }
 
     .data__name, .data__email {
