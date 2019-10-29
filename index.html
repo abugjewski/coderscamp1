@@ -9,6 +9,12 @@
 </head>
 <body>
     <header id="top">
+        <label for="hamburger">
+            <div class="hamburger-icon">
+                <span></span><span></span><span></span>
+            </div>
+        </label>
+        <input id="hamburger" type="checkbox">
         <nav class="top__navigation">
             <div class="container">
                 <a class="navigation__brand" href="#">Gary Stue.</a>
@@ -31,22 +37,58 @@
             <p class="top__subheading">I mogę to robić dla Ciebie</p>
             <button class="btn btn--top">Dowiedz się więcej</button>
         </div>
+        <a href="#top" class="start">
+            <i class="start__arrow icon-down-open"></i>
+        </a>
     </header>
     <main>
         <section id="about">
             <div class="container">
                 <img class="about__image" src="img/person.jpg">
                 <div class="about__info">
-                    <h2>O mnie</h2>
+                    <h2>o mnie</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, enim tempora veniam quos esse, maxime voluptas debitis nisi amet ad quibusdam. Placeat, laboriosam ratione, distinctio itaque quae laudantium voluptatum quam officiis maiores atque quod aperiam in rem sunt. Illo assumenda animi, itaque autem labore aliquid eos fugiat vitae voluptas eum saepe dicta delectus ad est, praesentium excepturi. Obcaecati minus dolorum architecto corrupti, eveniet, blanditiis provident exercitationem adipisci eos possimus praesentium! Omnis quod ipsam cum voluptatum inventore autem provident officiis, dolorum ratione nulla! Ducimus impedit ipsam placeat iste officiis aspernatur dolorem, repellendus, laudantium autem, voluptates libero! Tenetur mollitia expedita ratione quas.</p>
                 </div>
             </div>
         </section>
-        <section id="offer"></section>
-        <section id="contact"></section>
+        <section id="offer">
+            <div class="container">
+                <h2>oferta</h2>
+                <div class="offer__cards">
+                    <div class="card">
+                        <i class="card__icon icon-desktop"></i>
+                        <h3 class="card__heading">Front-end</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui in ullam quibusdam magnam odio. Ratione repellendus natus nesciunt neque! Unde tempora non eaque ut eveniet commodi, necessitatibus neque eum impedit fugiat dolore ad excepturi minus suscipit pariatur dolorem nostrum magni ullam at similique corrupti. Labore enim sit ut exercitationem soluta?</p>
+                    </div>
+                    <div class="card">
+                        <i class="card__icon icon-server"></i>
+                        <h3 class="card__heading">Back-end</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui in ullam quibusdam magnam odio. Ratione repellendus natus nesciunt neque! Unde tempora non eaque ut eveniet commodi, necessitatibus neque eum impedit fugiat dolore ad excepturi minus suscipit pariatur dolorem nostrum magni ullam at similique corrupti. Labore enim sit ut exercitationem soluta?</p>
+                    </div>
+                    <div class="card">
+                        <i class="card__icon icon-edit"></i>
+                        <h3 class="card__heading">Design</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui in ullam quibusdam magnam odio. Ratione repellendus natus nesciunt neque! Unde tempora non eaque ut eveniet commodi, necessitatibus neque eum impedit fugiat dolore ad excepturi minus suscipit pariatur dolorem nostrum magni ullam at similique corrupti. Labore enim sit ut exercitationem soluta?</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <div class="container">
+                <h2>kontakt</h2>
+                <form class="contact-form" action="index.html" method="POST">
+                    <div class="contact-form__data">
+                        <input class="data__name" type="text" placeholder="Twoje imię">
+                        <input class="data__email" type="text" placeholder="Twój e-mail">
+                    </div>
+                    <textarea class="contact-form__message" placeholder="Twoja wiadomość"></textarea>
+                    <input class="btn btn--contact" type="submit" value="wyślij">
+                </form>
+            </div>
+        </section>
     </main>
     <footer>
-            &copy; Wszelkie prawa zastrzeżone | Projekt stworzony na potrzeby <a href="">CodersCamp</a>
+            &copy; Wszelkie prawa zastrzeżone | Projekt stworzony na potrzeby <a href="http://coderscamp.edu.pl">CodersCamp</a>
     </footer>
 </body>
 </html>

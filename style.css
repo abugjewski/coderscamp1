@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+@import url("fontello/css/codersc.css");
 
 :root {
     --clr-main: #FF9848;
@@ -47,6 +48,10 @@ footer {
     text-align: center;
 }
 
+footer > a {
+    color: var(--clr-main);
+}
+
 h2 {
     margin-bottom: 1rem;
     color: var(--clr-main);
@@ -55,7 +60,7 @@ h2 {
     text-transform: uppercase;
 }
 
-section:nth-child(2n) > h2 {
+section:nth-child(2n) h2 {
     color: var(--clr-light);
 }
 
@@ -72,6 +77,7 @@ a {
 .btn {
     padding: 1rem 3rem;
     border: none;
+    font-weight: bold;
 }
 
 #top {
@@ -83,19 +89,57 @@ a {
     background: var(--clr-main);
 }
 
+label[for="hamburger"] {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 6;
+}
+
+.hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    width: 4rem;
+    height: 4rem;
+    align-items: center;
+    justify-content: space-evenly;
+    background: var(--clr-light);
+    border: 1px solid var(--clr-main);
+}
+
+.hamburger-icon > span {
+    width: 3rem;
+    height: 0.5rem;
+    background: var(--clr-main);
+}
+
+#hamburger {
+    display: none;
+}
+
+#hamburger:checked + .top__navigation {
+    display: block;
+}
+
 .top__navigation {
     display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--clr-light);
+    z-index: 5;
 }
 
 .top__navigation > .container {
     display: flex;
-    padding: 0;
+    flex-direction: column;
     align-items: center;
 }
 
 .navigation__brand {
     position: relative;
-    margin-right: auto;
+    margin-bottom: 2rem;
     font-size: 2rem;
     font-weight: bold;
 }
@@ -117,19 +161,21 @@ a {
 
 .navigation__list {
     display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
     list-style: none;
+}
+
+.navigation__item {
+    width: 100%;
 }
 
 .navigation__item > a {
     display: block;
-    padding: calc(1rem + 4px) 1rem 1rem 1rem;
-    border-bottom: 4px solid transparent;
+    padding: 1rem;
     font-size: 1.25rem;
-}
-
-.navigation__item:hover > a {
-    color: var(--clr-main);
-    border-bottom: 4px solid var(--clr-main);
+    text-align: center;
 }
 
 .top__bg {
@@ -167,7 +213,26 @@ a {
     position: relative;
     background: var(--clr-light);
     color: var(--clr-main);
-    font-weight: bold;
+}
+
+.start {
+    display: flex;
+    position: fixed;
+    width: 4rem;
+    height: 4rem;
+    right: 1rem;
+    bottom: 1rem;
+    align-items: center;
+    justify-content: center;
+    background: var(--clr-light);
+    color: var(--clr-main);
+    border: 1px solid var(--clr-main);
+    font-size: 2rem;
+    z-index: 6;
+}
+
+.start__arrow {
+    transform: rotate(180deg);
 }
 
 #about > .container {
@@ -184,6 +249,69 @@ a {
     width: 100%;
 }
 
+.offer__cards {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    align-items: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-bottom: 1rem;
+    padding: 2rem;
+    background: var(--clr-light);
+    align-items: center;
+}
+
+.card__icon {
+    margin-bottom: 1rem;
+    color: var(--clr-main);
+    font-size: 3rem;
+}
+
+.card__heading {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form__data {
+    display: flex;
+    flex-direction: column;
+}
+
+.data__name, .data__email, .contact-form__message {
+    margin-bottom: 1rem;
+    padding: 1rem 2rem;
+    border: 1px solid var(--clr-main);
+    color: var(--clr-font-primary);
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.data__name::placeholder, .data__email::placeholder, .contact-form__message::placeholder {
+    color: var(--clr-font-secondary);
+}
+
+.contact-form__message {
+    height: 250px;
+    resize: none;
+}
+
+.btn--contact {
+    background: var(--clr-main);
+    color: var(--clr-light);
+    text-transform: uppercase;
+}
+
 @media only screen and (min-width: 768px) {
     .container {
         width: 720px;
@@ -191,35 +319,147 @@ a {
 }
 
 @media only screen and (min-width: 992px) {
+
     h2 {
-        text-align: left;
+        font-size: 3rem;
     }
 
     .container {
         width: 960px;
     }
 
+    label[for="hamburger"] {
+        display: none;
+    }
+
     .top__navigation {
         display: block;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background: var(--clr-light);
         box-shadow: 0 5px 15px var(--clr-shadow);
-        z-index: 5;
+    }
+
+    .top__navigation > .container {
+        flex-direction: row;
+        padding: 0;
+    }
+
+    .navigation__brand {
+        margin-bottom: 0;
+        margin-right: auto;
+    }
+
+    .navigation__list {
+        flex-direction: row;
+        width: auto;
+    }
+
+    .navigation__item {
+        width: auto;
+    }
+
+    .navigation__item > a {
+        padding: calc(1rem + 4px) 1rem 1rem 1rem;
+        border-bottom: 4px solid transparent;
+        text-align: left;
+    }
+
+    .navigation__item:hover > a {
+        color: var(--clr-main);
+        border-bottom: 4px solid var(--clr-main);
+    }
+
+    .top__heading {
+        font-size: 4rem;
+    }
+
+    .top__subheading {
+        font-size: 2rem;
+    }
+
+    .start {
+        right: 2rem;
+        bottom: 2rem;
+    }
+
+    .start__arrow {
+        animation: 2s infinite gotop;
+    }
+
+    #about h2 {
+        text-align: left;
     }
 
     .about__image {
         display: block;
         margin-right: 2rem;
         width: 50%;
-        height: 100%;
+        height: 75%;
         object-fit: cover;
     }
 
     .about__info {
         width: 50%;
+    }
+
+    #offer h2 {
+        margin-bottom: 2rem;
+    }
+
+    .offer__cards {
+        flex-direction: row;
+    }
+
+    .card:first-child {
+        margin-left: 0;
+    }
+
+    .card {
+        margin: 0 1rem;
+        transition: border-radius 1s, box-shadow 1s, transform 1s;
+    }
+
+    .card:last-child {
+        margin-right: 0;
+    }
+
+    .card:hover {
+        border-radius: 1rem;
+        box-shadow: 10px 15px 40px var(--clr-shadow);
+        transform: scale(1.05);
+    }
+
+    .card__heading {
+        font-size: 2rem;
+    }
+
+    .contact-form__data {
+        flex-direction: row;
+    }
+
+    .data__name, .data__email {
+        width: 100%;
+    }
+
+    .data__name {
+        margin-right: 1rem;
+    }
+
+    .btn--contact {
+    	width: 50%;
+    	align-self: center;
+    }
+
+    @keyframes gotop {
+        0% {
+            transform: translateY(-0.5rem) rotate(180deg);
+        }
+
+        50% {
+            transform: translateY(0.5rem) rotate(180deg);
+        }
+
+        100% {
+            transform: translateY(-0.5rem) rotate(180deg);
+        }
     }
 }
 
