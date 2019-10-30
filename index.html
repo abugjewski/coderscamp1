@@ -44,7 +44,7 @@
     <main>
         <section id="about">
             <div class="container">
-                <img class="about__image" src="img/person.jpg">
+                <img class="about__image" src="img/person.jpg" alt="image of a person">
                 <div class="about__info">
                     <h2>o mnie</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, enim tempora veniam quos esse, maxime voluptas debitis nisi amet ad quibusdam. Placeat, laboriosam ratione, distinctio itaque quae laudantium voluptatum quam officiis maiores atque quod aperiam in rem sunt. Illo assumenda animi, itaque autem labore aliquid eos fugiat vitae voluptas eum saepe dicta delectus ad est, praesentium excepturi. Obcaecati minus dolorum architecto corrupti, eveniet, blanditiis provident exercitationem adipisci eos possimus praesentium! Omnis quod ipsam cum voluptatum inventore autem provident officiis, dolorum ratione nulla! Ducimus impedit ipsam placeat iste officiis aspernatur dolorem, repellendus, laudantium autem, voluptates libero! Tenetur mollitia expedita ratione quas.</p>
@@ -78,10 +78,10 @@
                 <h2>kontakt</h2>
                 <form class="contact-form" action="index.html" method="POST">
                     <div class="contact-form__data col-to-row">
-                        <input class="data__name" type="text" placeholder="Twoje imię">
-                        <input class="data__email" type="text" placeholder="Twój e-mail">
+                        <input class="data__name" type="text" name="name" placeholder="Twoje imię" aria-label="Twoje imię">
+                        <input class="data__email" type="text" name="email" placeholder="Twój e-mail" aria-label="Twój e-mail">
                     </div>
-                    <textarea class="contact-form__message" placeholder="Twoja wiadomość"></textarea>
+                    <textarea class="contact-form__message" name="message" placeholder="Twoja wiadomość" aria-label="Twoja wiadomość"></textarea>
                     <input class="btn btn--contact" type="submit" value="wyślij">
                 </form>
             </div>

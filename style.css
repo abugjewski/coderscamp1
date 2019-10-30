@@ -34,7 +34,10 @@ body {
 }
 
 section {
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
+    justify-content: center;
 }
 
 section:nth-child(2n) {
@@ -70,7 +73,6 @@ a {
 }
 
 .container {
-    margin: 0 auto;
     padding: 1rem;
 }
 
@@ -295,6 +297,7 @@ label[for="hamburger"] {
 
 @media only screen and (min-width: 768px) {
     .container {
+        margin: 0 auto;
         width: 720px;
     }
 }
