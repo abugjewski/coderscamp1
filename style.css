@@ -343,14 +343,33 @@ label[for="hamburger"] {
     }
 
     .navigation__item > a {
-        padding: calc(1rem + 4px) 1rem 1rem 1rem;
-        border-bottom: 4px solid transparent;
+        position: relative;
+        padding: 1rem;
         text-align: left;
+        transition: color 0.5s;
     }
 
-    .navigation__item:hover > a {
-        color: var(--clr-main);
-        border-bottom: 4px solid var(--clr-main);
+    .navigation__item > a:hover {
+        color: var(--clr-light);
+    }
+
+    .navigation__item > a::before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background: var(--clr-main);
+        transform: scaleY(0);
+        transform-origin: bottom;
+        transition: transform 0.5s;
+        z-index: -1;
+    }
+
+    .navigation__item:hover > a::before {
+        transform: scaleY(1);
+        transform-origin: top;
     }
 
     .top__heading {
@@ -360,6 +379,18 @@ label[for="hamburger"] {
 
     .top__subheading {
         font-size: 2rem;
+    }
+
+    .btn--top::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: transparent;
+        box-shadow: 0 0 0 0.25rem var(--clr-light);
+        animation: 2s infinite buttonanim;
     }
 
     .start {
@@ -423,8 +454,8 @@ label[for="hamburger"] {
     }
 
     .btn--contact {
-    	width: 50%;
-    	align-self: center;
+        margin: 0 auto;
+        width: 50%;
     }
 
     @keyframes gotop {
@@ -438,6 +469,20 @@ label[for="hamburger"] {
 
         100% {
             transform: translateY(-0.5rem) rotate(180deg);
+        }
+    }
+
+    @keyframes buttonanim {
+        0% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(1.05, 1.2);
+        }
+
+        100% {
+            transform: scale(1);
         }
     }
 }
