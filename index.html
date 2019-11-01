@@ -78,10 +78,19 @@
                 <h2>kontakt</h2>
                 <form class="contact-form" action="index.html" method="POST">
                     <div class="contact-form__data col-to-row">
-                        <input class="data__name" type="text" name="name" placeholder="Twoje imię" aria-label="Twoje imię">
-                        <input class="data__email" type="text" name="email" placeholder="Twój e-mail" aria-label="Twój e-mail">
+                        <div class="input-wrapper">
+                            <input class="data__name" type="text" name="name" id="name" aria-label="Twoje imię" required >
+                            <label class="data__label" for="name">Twoje imię</label>
+                        </div>
+                        <div class="input-wrapper">
+                            <input class="data__email" type="text" name="name" id="email" aria-label="Twój e-mail" required>
+                            <label class="data__label" for="email">Twój e-mail</label>
+                        </div>
                     </div>
-                    <textarea class="contact-form__message" name="message" placeholder="Twoja wiadomość" aria-label="Twoja wiadomość"></textarea>
+                    <div class="input-wrapper">
+                        <textarea class="data__message" name="name" id="message" aria-label="Twoja wiadomość" required></textarea>
+                        <label class="data__label" for="message">Twoja wiadomość</label>
+                    </div>
                     <input class="btn btn--contact" type="submit" value="wyślij">
                 </form>
             </div>

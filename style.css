@@ -271,8 +271,19 @@ label[for="hamburger"] {
     flex-direction: column;
 }
 
-.data__name, .data__email, .contact-form__message {
-    margin-bottom: 1rem;
+.input-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+}
+
+.data__label {
+    color: var(--clr-font-secondary);
+}
+
+.data__name, .data__email, .data__message {
+    margin-bottom: 2rem;
+    width: 100%;
     padding: 1rem 2rem;
     border: 1px solid var(--clr-main);
     color: var(--clr-font-primary);
@@ -280,11 +291,7 @@ label[for="hamburger"] {
     font-size: 1rem;
 }
 
-.data__name::placeholder, .data__email::placeholder, .contact-form__message::placeholder {
-    color: var(--clr-font-secondary);
-}
-
-.contact-form__message {
+.data__message {
     height: 250px;
     resize: none;
 }
@@ -445,11 +452,28 @@ label[for="hamburger"] {
         font-size: 2rem;
     }
 
-    .data__name, .data__email {
-        width: 100%;
+    .input-wrapper {
+        position: relative;
     }
 
-    .data__name {
+    .data__label {
+        position: absolute;
+        top: calc(1rem - 2px);
+        left: calc(2rem + 1px);
+        transition: top 1s, left 1s;
+    }
+
+    .data__name:valid + .data__label,
+    .data__name:focus + .data__label,
+    .data__email:valid + .data__label,
+    .data__email:focus + .data__label,
+    .data__message:valid + .data__label,
+    .data__message:focus + .data__label {
+        top: -1.5rem;
+        left: 0;
+    }
+
+    .input-wrapper:first-child {
         margin-right: 1rem;
     }
 
